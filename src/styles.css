@@ -1,0 +1,95 @@
+@charset "UTF-8";
+body {
+  background-color: #232539;
+}
+
+#logo {
+  width: 50%;
+  padding-left: 98px;
+}
+
+.nav-link {
+  color: white;
+  white-space: nowrap;
+  /* zajistí, aby se text nezlomil na více řádků */
+}
+
+.koncovka {
+  padding-right: 100px;
+}
+
+#nadpis {
+  width: 502px;
+  height: 252px;
+  padding-top: 80px;
+  padding-left: 102px;
+}
+#nadpis p {
+  color: #CFCFCF;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h1 {
+  color: #FFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Open Sans;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+#obrazek_slunce {
+  width: 30%;
+}
+
+#s_button {
+  width: 123px;
+  height: 38px;
+  border-radius: 8px;
+  background: #EB6C57;
+}
+
+#v_button {
+  margin-left: 40px;
+  width: 123px;
+  height: 38px;
+  border: 2px solid;
+  color: #CFCFCF;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#container_jak {
+  color: white;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 129px;
+  max-width: max;
+  height: 400px;
+  background: linear-gradient(180deg, rgba(235, 108, 87, 0.98) 0%, rgba(235, 108, 87, 0.64) 0.01%, rgba(235, 108, 87, 0.64) 17.17%, rgba(235, 108, 87, 0) 93.17%, rgba(235, 108, 87, 0) 99.99%);
+}
+#container_jak span {
+  width: 10px;
+}
+
+#app_main_container {
+  background-color: #3c3f61;
+  width: 325px;
+  height: 400px;
+}
+
+#lo {
+  width: 70%;
+}
+
+#circle {
+  width: 45px;
+  height: 45px;
+  background-color: #EB6C57;
+  border-radius: 100%;
+}/*# sourceMappingURL=styles.css.map */
