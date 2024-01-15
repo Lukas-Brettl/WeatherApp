@@ -10,10 +10,10 @@ const Layout = () => {
               <img src={obrazek} alt="Logo" id="logo"/>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 pe-5" to="/">Domů</Link>
+              <Link className="nav-link fs-5 me-5" to="/">Domů</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 pe-5" to="/About">O nás</Link>
+              <Link className="nav-link fs-5 me-5" to="/About">O nás</Link>
             </li>
             <li className="nav-item koncovka">
               <Link className="nav-link fs-5 " to="/Contact">Kontakty</Link>

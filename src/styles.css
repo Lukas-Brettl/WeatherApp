@@ -10,8 +10,26 @@ body {
 
 .nav-link {
   color: white;
+  padding: 2px;
   white-space: nowrap;
   /* zajistí, aby se text nezlomil na více řádků */
+}
+
+.nav-link:active {
+  color: white;
+}
+
+.nav-link:-moz-any-link {
+  color: white;
+}
+
+.nav-link:any-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .koncovka {
@@ -81,10 +99,6 @@ h1 {
   background-color: #3c3f61;
   width: 325px;
   height: 400px;
-}
-
-#lo {
-  width: 70%;
 }
 
 #circle {

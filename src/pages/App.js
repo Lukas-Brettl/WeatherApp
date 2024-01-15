@@ -22,7 +22,7 @@ const Window = () => {
 
               <img src={weather} alt="weather"></img>
               <h3>0°C</h3>
-              <h3>Stav Počassí</h3>
+              <h3>Stav Počasí</h3>
 
             </div>
 
