@@ -11,14 +11,14 @@ const Window = () => {
         <div className="conatiner-fluid d-flex justify-content-center "> 
           <div className="mt-3" id="app_main_container">
 
-            <div className="d-flex align-items-center "> {/* Header */}
+            <div className="d-flex align-items-center vstup "> {/* Header */}
 
-              <img src={location} alt="location"></img>
+              <img src={location} alt="location" id="location"></img>
               <input type="text"></input> 
               <div id="circle"><img src={glass} alt="glass"></img></div>
 
             </div>
-            <div className="d-flex flex-column align-items-center"> {/* Status weather */}
+            <div className="d-flex flex-column align-items-center telo"> {/* Status weather */}
 
               <img src={weather} alt="weather"></img>
               <h3>0°C</h3>
@@ -26,18 +26,24 @@ const Window = () => {
 
             </div>
 
-            <div className="d-flex mt-2"> {/* Footer */}
-
-              <img src={wind} alt="wind"></img>
-              <div>
-                <h4>vítr</h4>
-                <h4>72 km/h</h4>
+            <div className="d-flex mt-2 text-white foot"> {/* Footer */}
+              
+              <div class="div_mezera">
+                <img src={wind} alt="wind"></img>
+                <div>
+                  <h4>vítr</h4>
+                  <h4>72 km/h</h4>
+                </div>
               </div>
-              <img src={humidity} alt="humidity"></img>
-              <div>
-                <h4>vlhkost</h4>
-                <h4>72 %</h4>
+              
+              <div class="div_mezera">
+                <img src={humidity} alt="humidity"></img>
+                <div>
+                  <h4>vlhkost</h4>
+                  <h4>72 %</h4>
+                </div>
               </div>
+          
 
             </div>
          </div>

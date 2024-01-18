@@ -97,15 +97,77 @@ h1 {
 
 #app_main_container {
   background-color: #3c3f61;
-  width: 325px;
-  height: 400px;
+  width: 358px;
+  height: 421px;
+  border-radius: 20px;
 }
 
-#circle {
-  width: 45px;
-  height: 45px;
+.vstup {
+  display: flex;
+  font-size: 21px;
+}
+.vstup input {
+  position: absolute;
+  margin-left: 60px;
+  margin-top: 30px;
+  height: 54px;
+  width: 260px;
+  border-radius: 15px;
+  border: 2px solid #FFF;
+  background: rgba(255, 255, 255, 0.24);
+  z-index: 1;
+}
+.vstup #circle {
+  position: absolute;
+  margin-left: 265px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
   background-color: #EB6C57;
   border-radius: 100%;
+  z-index: 2;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.vstup #circle img {
+  position: absolute;
+  width: 40px;
+  z-index: 3;
+}
+.vstup #circle:hover {
+  background-color: rgba(235, 99, 75, 0);
+}
+.vstup #location {
+  margin-top: 30px;
+}
+
+.telo img {
+  margin-top: 10px;
+}
+.telo h3 {
+  color: white;
+  line-height: 25px;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.foot img {
+  width: 60px;
+  height: 60px;
+}
+.foot h4 {
+  text-wrap: nowrap;
+  margin-left: 8px;
+}
+
+.div_mezera {
+  display: flex;
+  align-items: center;
 }
 
 #chyba {
