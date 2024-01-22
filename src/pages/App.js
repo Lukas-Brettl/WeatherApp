@@ -1,7 +1,7 @@
 
 import glass from "../images/icons8-magnifying-glass-50.png"
 import weather from "../images/icons8-weather-144.png"
-import wind from "../images/icons8-wind-100.png"
+import pressure from "../images/icons8-pressure-96.png"
 import humidity from "../images/icons8-humidity-100.png"
 
 
@@ -14,8 +14,8 @@ const Window = () => {
             <div className="d-flex align-items-center vstup "> {/* Header */}
 
             
-              <input type="text"></input> 
-              <div id="circle"><img src={glass} alt="glass"></img></div>
+              <input type="text" placeholder="Zadejte místo..."></input> 
+              <div id="circle"><img src={glass} alt="glass" onClick={get_weather}></img></div>
 
             </div>
             <div className="d-flex flex-column align-items-center telo"> {/* Status weather */}
@@ -29,10 +29,10 @@ const Window = () => {
             <div className="d-flex mt-2 text-white foot"> {/* Footer */}
               
               <div class="div_mezera">
-                <img src={wind} alt="wind"></img>
+                <img src={pressure} alt="pressure"></img>
                 <div>
-                  <h4>vítr</h4>
-                  <h4>72 km/h</h4>
+                  <h4>tlak</h4>
+                  <h4 id="pressure_val">72 km/h</h4>
                 </div>
               </div>
               <div id="cara">
@@ -42,7 +42,7 @@ const Window = () => {
                 <img src={humidity} alt="humidity"></img>
                 <div>
                   <h4>vlhkost</h4>
-                  <h4>72 %</h4>
+                  <h4 id="humidity_val">72 %</h4>
                 </div>
               </div>
           
@@ -52,6 +52,23 @@ const Window = () => {
       </div>
 
     )
-  };
+    function get_weather(){
+      const vstup = document.querySelector("input")
+      var humidity_val = document.getElementById("humidity_val")
+      var teplota_val = document.getElementById("teplota")
+      var pressure_val = document.getElementById("pressure_val")
+      const api_key = "31021b81e505ad9563bb551d51ceb87d"
+      
+      const place = vstup.value
+      const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + api_key + "&q=" + place
+      fetch(url).then(res => res.json()).then(data => humidity_val.innerText = (data.main.humidity) + "%")
+      fetch(url).then(res => res.json()).then(data => teplota_val.innerText = (Math.floor(data.main.temp - 273.15)) + "°C")
+      fetch(url).then(res => res.json()).then(data => pressure_val.innerText = (data.main.pressure) + "hPa")
+      
+    }
+};
+
+
+
   
   export default Window;
