@@ -96,7 +96,7 @@ h1 {
 }
 
 #app_main_container {
-  background-color: #3c3f61;
+  background: linear-gradient(180deg, #5F6395 0%, rgba(50, 52, 82, 0.57) 100%);
   width: 358px;
   height: 421px;
   border-radius: 20px;
@@ -107,26 +107,30 @@ h1 {
   font-size: 21px;
 }
 .vstup input {
-  position: absolute;
-  margin-left: 60px;
-  margin-top: 30px;
+  position: none;
+  margin-left: 50px;
+  margin-top: 10px;
   height: 54px;
   width: 260px;
-  border-radius: 15px;
-  border: 2px solid #FFF;
-  background: rgba(255, 255, 255, 0.24);
-  z-index: 1;
+  display: block;
+  font-size: 24px;
+  color: white;
+  background: rgba(121, 125, 161, 0);
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 3px solid white;
 }
 .vstup #circle {
   position: absolute;
   margin-left: 265px;
-  margin-top: 28px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 46px;
   height: 46px;
-  background-color: #EB6C57;
+  background-color: transparent;
   border-radius: 100%;
   z-index: 2;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -136,19 +140,21 @@ h1 {
   width: 40px;
   z-index: 3;
 }
-.vstup #circle:hover {
-  background-color: rgba(235, 99, 75, 0);
-}
-.vstup #location {
-  margin-top: 30px;
-}
 
 .telo img {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .telo h3 {
   color: white;
   line-height: 25px;
+}
+.telo #teplota {
+  font-size: 50px;
+}
+.telo #stav {
+  margin-top: 10px;
+  font-size: 22px;
 }
 
 .foot {
@@ -161,8 +167,14 @@ h1 {
   height: 60px;
 }
 .foot h4 {
+  font-size: 20px;
   text-wrap: nowrap;
   margin-left: 8px;
+}
+.foot #cara {
+  height: 80x;
+  width: 2px;
+  background: white;
 }
 
 .div_mezera {

@@ -1,4 +1,4 @@
-import location from "../images/icons8-location-50.png"
+
 import glass from "../images/icons8-magnifying-glass-50.png"
 import weather from "../images/icons8-weather-144.png"
 import wind from "../images/icons8-wind-100.png"
@@ -13,7 +13,7 @@ const Window = () => {
 
             <div className="d-flex align-items-center vstup "> {/* Header */}
 
-              <img src={location} alt="location" id="location"></img>
+            
               <input type="text"></input> 
               <div id="circle"><img src={glass} alt="glass"></img></div>
 
@@ -21,8 +21,8 @@ const Window = () => {
             <div className="d-flex flex-column align-items-center telo"> {/* Status weather */}
 
               <img src={weather} alt="weather"></img>
-              <h3>0°C</h3>
-              <h3>Stav Počasí</h3>
+              <h3 id="teplota">0°C</h3>
+              <h3 id="stav">Jasno</h3>
 
             </div>
 
@@ -35,7 +35,9 @@ const Window = () => {
                   <h4>72 km/h</h4>
                 </div>
               </div>
-              
+              <div id="cara">
+
+              </div>
               <div class="div_mezera">
                 <img src={humidity} alt="humidity"></img>
                 <div>
