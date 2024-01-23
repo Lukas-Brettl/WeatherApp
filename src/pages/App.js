@@ -57,14 +57,35 @@ const Window = () => {
       var humidity_val = document.getElementById("humidity_val")
       var teplota_val = document.getElementById("teplota")
       var pressure_val = document.getElementById("pressure_val")
+      var stav = document.getElementById("stav")
       const api_key = "31021b81e505ad9563bb551d51ceb87d"
       
+      var prelozeny_stav
+      var stav_prekladac = { 
+        "Clear": "Jasno",
+        "Clouds": "Zataženo",
+        "Rain": "Déšť",
+        "Snow": "Sněží",
+        "Mist": "Mlha",
+        "Fog": "Hustá mlha",
+        "Thunderstorm": "Bouřka",
+        "Drizzle": "Mrholení",
+        "Haze": "Mlha"} 
       const place = vstup.value
       const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + api_key + "&q=" + place
       fetch(url).then(res => res.json()).then(data => humidity_val.innerText = (data.main.humidity) + "%")
       fetch(url).then(res => res.json()).then(data => teplota_val.innerText = (Math.floor(data.main.temp - 273.15)) + "°C")
       fetch(url).then(res => res.json()).then(data => pressure_val.innerText = (data.main.pressure) + "hPa")
-      
+      fetch(url).then(res => res.json()).then(data => 
+      { if (data.weather[0].main in stav_prekladac){
+          prelozeny_stav = stav_prekladac[data.weather[0].main]
+          stav.innerText = prelozeny_stav
+      }
+        else{
+          console.log("aaaaaaaaa")
+        }});
+    
+
     }
 };
 
