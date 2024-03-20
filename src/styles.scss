@@ -1,3 +1,4 @@
+$w: white;
 body {
     background-color: #232539;
 }
@@ -8,33 +9,28 @@ body {
 
 }
 
-
-.nav-link {
-    color: white;
-    padding: 2px;
-    white-space: nowrap;
-    /* zajistí, aby se text nezlomil na více řádků */
-
-}
-
-.nav-link:active {
-    color: white;
-
-}
-
-.nav-link:any-link {
-    color: white;
-}
-
-.nav-link:hover {
-    color: white;
-    border-bottom: 2px solid white;
-}
-
-.koncovka {
-    padding-right: 100px;
-}
-
+nav>div>ul{
+        >.koncovka{
+            padding-right: 100px;
+        }
+        >li>.nav-link{
+            color: $w;
+            padding: 2px;
+            white-space: nowrap;
+        }
+        >li>.nav-link:active{
+            color: $w;
+        }
+    
+        >li>.nav-link:any-link{
+            color: $w;
+        }
+    
+        >li>.nav-link:hover{
+            color: $w;
+            border-bottom: 2px solid $w;
+        }
+    }
 
 
 #nadpis {
@@ -56,7 +52,7 @@ body {
 
 h1 {
 
-    color: #FFF;
+    color: $w;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Open Sans;
     font-size: 42px;
@@ -88,7 +84,7 @@ h1 {
 }
 
 #container_jak {
-    color: white;
+    color: $w;
     padding: 20px;
     margin-top: 50px;
     margin-bottom: 129px;
@@ -127,17 +123,18 @@ h1 {
         width: 260px;
         display: block;
         font-size: 24px;
-        color: white;
+        color: $w;
         background: #797da100;
         border-top: 2px solid transparent;
         border-right: 2px solid transparent;
         border-left: 2px solid transparent;
-        border-bottom: 3px solid white;
-        
-        
-       
-        
+        border-bottom: 3px solid $w;
+        outline: transparent;
 
+    }
+
+    input::placeholder{
+        color: rgb(218, 218, 218);
     }
 
     #circle {
@@ -174,7 +171,7 @@ h1 {
     }
 
     h3 {
-        color: white;
+        color: $w;
         line-height: 25px;
     }
 
@@ -208,7 +205,7 @@ h1 {
     #cara{
         height: 80x;
         width: 2px;
-        background: white;
+        background: $w;
     }
 
 }

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Appp from "./pages/App";
+import Search from "./pages/search";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
@@ -12,6 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="Search" element={<Search />} />
           <Route path="App" element={<Appp />} />
           <Route path="contact" element={<Contact />} />
         </Route>
@@ -20,6 +22,7 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);

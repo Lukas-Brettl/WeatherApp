@@ -4,13 +4,13 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
   return (
-    <>
+    <> 
       <div className="d-flex justify-content-between ">
         <div id="nadpis">
           <h1>Dolore qui ullamco esse labore cillum est nostrud sunt.</h1>
           <p>Irure dolor adipisicing sint duis elit cillum esse. Lorem laborum nostrud deserunt nisi cillum est ea cillum excepteur ut.</p>
           <div>
-            <Link to="/App"><button className="btn btn-danger text-white" id="s_button">Lorem </button></Link>
+            <Link to="/Search"><button className="btn btn-danger text-white" id="s_button">Lorem </button></Link>
             <button type="button" className="btn btn-outline-secondary" id="v_button">Ipsum</button>
           </div>
           
@@ -25,7 +25,7 @@ const Home = () => {
       </div>
 
     </>
-
+    
 
   )
 };
