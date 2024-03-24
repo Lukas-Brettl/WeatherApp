@@ -1,4 +1,5 @@
-
+import { useState } from "react"
+import {Modal, Button} from "react-bootstrap"
 import glass from "../images/icons8-magnifying-glass-50.png"
 import clear from "../images/icons8-weather-144.png"
 import pressure from "../images/icons8-pressure-96.png"
@@ -17,7 +18,7 @@ const Window = () => {
   
   
   
-
+  const [showModal, setShowModal] = useState(false);
 
   return (
       <div className="conatiner-fluid d-flex justify-content-center "> 
@@ -61,7 +62,27 @@ const Window = () => {
 
           </div>
         </div>
-    </div>
+        <div>
+          {showModal && 
+          (<Modal show={showModal}>
+            <Modal.Header >
+          <Modal.Title>Nepodařilo se nám najít požadovanou zemi   :(</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Zkuste zadat název země v angličtině
+        </Modal.Body>
+        <Modal.Footer>
+        <Button type="button" className="btn btn-danger" onClick={() => setShowModal(false)}>Zavřít</Button>
+        </Modal.Footer>
+          </Modal>
+            
+          )}  
+        
+   
+      </div>
+          
+  </div>
+   
 
   )
 
@@ -92,28 +113,53 @@ const Window = () => {
         "Drizzle": ["Mrholení", drizzle],
         "Haze": ["Mlha", fog]} 
       const place = vstup.value
+      
       const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + api_key + "&q=" + place
-      fetch(url).then(res => res.json()).then(data => humidity_val.innerText = (data.main.humidity) + "%")
-      fetch(url).then(res => res.json()).then(data => teplota_val.innerText = (Math.floor(data.main.temp - 273.15)) + "°C")
-      fetch(url).then(res => res.json()).then(data => pressure_val.innerText = (data.main.pressure) + "hPa")
-      fetch(url).then(res => res.json()).then(data => 
-      { if (data.weather[0].main in stav_prekladac){
-          prelozeny_stav = stav_prekladac[data.weather[0].main].at(0)
-          img_weather.src = stav_prekladac[data.weather[0].main].at(1)
-          stav.innerText = prelozeny_stav
+
+  
 
       
-   
+      try {
+        fetch(url)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return res.json();
+          })
+          .then((data) => {
+            humidity_val.innerText = `${data.main.humidity}%`;
+            teplota_val.innerText = `${Math.floor(data.main.temp - 273.15)}°C`;
+            pressure_val.innerText = `${data.main.pressure}hPa`;
+      
+            if (data.weather[0].main in stav_prekladac) {
+              prelozeny_stav = stav_prekladac[data.weather[0].main].at(0);
+              img_weather.src = stav_prekladac[data.weather[0].main].at(1);
+              stav.innerText = prelozeny_stav;
+            } else {
+              stav.innerText = 'Stav Nenalezen';
+            }
+          })
+          .catch((error) => {
+            setShowModal(true);
+            
+            console.error('Chyba při získávání dat:', error);
+          });
+      } catch (error) {
+        setShowModal(true);
+        console.error('Chyba při zpracování:', error);
       }
-      else{
-       stav.innerText = "Stav Nenalezen"
-        }});
-    
-
+      
+      vstup.value = '';
     }
-};
 
 
+
+
+  
+  };      
+
+  
 
   
   export default Window;

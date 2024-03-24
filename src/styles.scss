@@ -109,42 +109,6 @@ h1 {
 
 /*--------------------------------App------------------------------*/
 
-/*-------------------------------Search----------------------------*/
-
-#search_content{
-    display: flex;
-    margin:auto;
-    margin-top: 30dvh;
-    border-radius: 20px;
-    width: 40%;
-    height: 100px;
-    background: linear-gradient(180deg, #5F6395 0%, rgba(50, 52, 82, 0.57) 100%);
-    input{
-        position: none;
-        margin-left: 50px;
-        margin-top: 10px;
-        height: 54px;
-        width: 70%;
-        display: block;
-        font-size: 24px;
-        color: $w;
-        background: #797da100;
-        border-top: 2px solid transparent;
-        border-right: 2px solid transparent;
-        border-left: 2px solid transparent;
-        border-bottom: 3px solid $w;
-        outline: transparent;
-    }
-
-    img{
-        margin-top: 15px;
-        margin-left: 10px;
-        width: 60px;
-        height: 60px;
-    
-    }
-}
-
 #app_main_container {
     background: linear-gradient(180deg, #5F6395 0%, rgba(50, 52, 82, 0.57) 100%);
     box-shadow: 5px 5px 5px #22222c;
@@ -152,10 +116,6 @@ h1 {
     height: 421px;
     border-radius: 20px;
 }
-
-
-
-
 
 .vstup {
     display: flex;
