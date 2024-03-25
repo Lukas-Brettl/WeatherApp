@@ -99,6 +99,41 @@ h1 {
   width: 358px;
   height: 421px;
   border-radius: 20px;
+  z-index: 3;
+}
+
+#second_main_container {
+  position: absolute;
+  background: linear-gradient(180deg, #5F6395 0%, rgba(50, 52, 82, 0.57) 100%);
+  width: 358px;
+  height: 421px;
+  border-radius: 20px;
+  scale: 1.08;
+  color: white;
+}
+#second_main_container .forcast_img {
+  width: 70px;
+  height: 70px;
+}
+#second_main_container .days {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid gray;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+#third_container {
+  position: absolute;
+  background: #232539;
+  width: 358px;
+  height: 421px;
+  border-radius: 20px;
+  scale: 1.1;
+  z-index: 2;
 }
 
 .vstup {
@@ -161,6 +196,18 @@ h1 {
 .telo #stav {
   margin-top: 10px;
   font-size: 22px;
+}
+.telo span {
+  position: absolute;
+  margin-left: 290px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #9c9c9c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.telo span:hover {
+  color: white;
 }
 
 .foot {
