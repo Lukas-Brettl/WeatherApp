@@ -124,6 +124,12 @@ h1 {
   border: 2px solid gray;
   margin-top: 15px;
   border-radius: 15px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+#second_main_container .days:hover {
+  box-shadow: 5px 5px 5px #22222c;
+  scale: 1.001;
 }
 
 #third_container {
