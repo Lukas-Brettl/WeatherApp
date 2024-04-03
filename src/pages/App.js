@@ -11,7 +11,7 @@ import fog from "../images/icons8-fog-100.png"
 import rain from "../images/icons8-rain-100.png"
 import snow from "../images/icons8-snow-100.png"
 import storm from "../images/icons8-storm-100.png"
-import Day_of_week from "./Day_of_week";
+
 
 
 
@@ -20,7 +20,6 @@ const Window = () => {
   const [isarrow, setIsarrow] = useState(">")
   const [expanded, setExpanded] = useState(false)
   const [showModal, setShowModal] = useState(false);
-  const [isday, seIsday] = useState()
   const expandDiv = () => {
     if (expanded){
       setIsarrow(">")
@@ -118,17 +117,17 @@ const Window = () => {
           <span className="fs-4 text-decoration-underline cursor-pointer me-5">Zobrazit radar</span>
           <span>více˄</span>
           <div className="days" style={{marginTop: "100px"}}>
-            <h3><Day_of_week day={0}/></h3>
+            <h3>Po.</h3>
             <img src={clear} alt="stav počasí" className="forcast_img"></img>
             <h3>0 - 1°C</h3>
           </div>
           <div className="days">
-            <h3><Day_of_week day={1}/></h3>
+            <h3>Út.</h3>
             <img src={clear} alt="stav počasí" className="forcast_img"></img>
             <h3>0 - 1°C</h3>
           </div>
           <div className="days">
-            <h3><Day_of_week day={2}/></h3>
+            <h3>St.</h3>
             <img src={clear} alt="stav počasí" className="forcast_img"></img>
             <h3>0 - 1°C</h3>
           </div>
@@ -136,15 +135,15 @@ const Window = () => {
         
           {showModal && 
           (<Modal show={showModal}>
-              <Modal.Header >
-                <Modal.Title>Nepodařilo se nám najít požadovanou zemi   :(</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              Zkuste zadat název země v angličtině
-            </Modal.Body>
-            <Modal.Footer>
-              <Button type="button" className="btn btn-danger" onClick={() => setShowModal(false)}>Zavřít</Button>
-            </Modal.Footer>
+            <Modal.Header >
+          <Modal.Title>Nepodařilo se nám najít požadovanou zemi   :(</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Zkuste zadat název země v angličtině
+        </Modal.Body>
+        <Modal.Footer>
+        <Button type="button" className="btn btn-danger" onClick={() => setShowModal(false)}>Zavřít</Button>
+        </Modal.Footer>
           </Modal>
             
           )}  
@@ -163,10 +162,6 @@ const Window = () => {
     }
   }
     
-    function get_forecast(){
-
-    }
-
     function get_weather(){
       const vstup = document.querySelector("input")
       if (vstup.value !== ""){
@@ -176,9 +171,7 @@ const Window = () => {
         var stav = document.getElementById("stav")
         var img_weather = document.getElementById("img_weather")
         const api_key = "31021b81e505ad9563bb551d51ceb87d"
-        let lon;
-        let lat;
-
+        
         var prelozeny_stav
         var stav_prekladac = { 
           "Clear": ["Jasno", clear],
@@ -200,14 +193,12 @@ const Window = () => {
         try {
           fetch(url)
             .then((res) => {
-              return(res.json());
+              return res.json();
             })
             .then((data) => {
               humidity_val.innerText = `${data.main.humidity}%`;
               teplota_val.innerText = `${Math.floor(data.main.temp - 273.15)}°C`;
               pressure_val.innerText = `${data.main.pressure}hPa`;
-              lon = `${data.coord.lon}`;
-              lat = `${data.coord.lat}`;
         
               if (data.weather[0].main in stav_prekladac) {
                 prelozeny_stav = stav_prekladac[data.weather[0].main].at(0);

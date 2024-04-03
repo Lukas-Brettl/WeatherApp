@@ -129,7 +129,7 @@ h1 {
 }
 #second_main_container .days:hover {
   box-shadow: 5px 5px 5px #22222c;
-  scale: 1.001;
+  scale: 1.005;
 }
 
 #third_container {
