@@ -13,7 +13,10 @@ import snow from "../images/icons8-snow-100.png"
 import storm from "../images/icons8-storm-100.png"
 
 
+//My old code
+//**It's pain to see I didn't use useRef (and other wierd code)**
 
+//so you can see that my beginnings were bad 
 
 const Window = () => {
 
@@ -170,7 +173,7 @@ const Window = () => {
         var pressure_val = document.getElementById("pressure_val")
         var stav = document.getElementById("stav")
         var img_weather = document.getElementById("img_weather")
-        const api_key = "31021b81e505ad9563bb551d51ceb87d"
+        
         
         var prelozeny_stav
         var stav_prekladac = { 
@@ -184,8 +187,9 @@ const Window = () => {
           "Drizzle": ["Mrholení", drizzle],
           "Haze": ["Mlha", fog]} 
         const place = vstup.value
-        
-        const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + api_key + "&q=" + place
+        const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
+        const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + API_KEY + "&q=" + place
         
     
 
