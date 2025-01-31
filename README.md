@@ -1,3 +1,11 @@
+# Weather app
+1) Click on lorem
+2) In search bar type county or town
+3) Clik on magnifying glass
+
+## (It's my (about 1 year) old code!)
+
+   
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
