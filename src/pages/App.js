@@ -91,7 +91,7 @@ const Window = () => {
 
           <div className="d-flex mt-2 text-white foot"> {/* Footer */}
             
-            <div class="div_mezera">
+            <div className="div_mezera">
               <img src={pressure} alt="pressure"></img>
               <div>
                 <h4>tlak</h4>
@@ -101,7 +101,7 @@ const Window = () => {
             <div id="cara">
 
             </div>
-            <div class="div_mezera">
+            <div className="div_mezera">
               <img src={humidity} alt="humidity"></img>
               <div>
                 <h4>vlhkost</h4>
@@ -187,8 +187,8 @@ const Window = () => {
           "Drizzle": ["Mrholení", drizzle],
           "Haze": ["Mlha", fog]} 
         const place = vstup.value
-        const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
+        const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+        
         const url = "https://api.openweathermap.org/data/2.5/weather?&appid=" + API_KEY + "&q=" + place
         
     
